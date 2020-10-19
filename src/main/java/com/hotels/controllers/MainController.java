@@ -1,10 +1,10 @@
 package com.hotels.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,6 @@ import com.hotels.services.RoomService;
 
 @Controller
 @ComponentScan({ "com.hotels.services" })
-@PreAuthorize("hasAuthority('ADMIN')")
 public class MainController {
 
 	private static Long id_country;
@@ -36,7 +35,7 @@ public class MainController {
 	@Autowired
 	private RoomService roomService;
 	//_____________________________________________________________Countries_________________________	
-	@GetMapping
+	@GetMapping	
 	public String homeCountries(@ModelAttribute("country") Country country,
 			Model model) {
 		model.addAttribute("countries", countryService.getCountries());

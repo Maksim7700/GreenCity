@@ -14,9 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.hotels.model.Country;
 import com.hotels.model.Hotel;
-import com.hotels.model.Role;
 import com.hotels.model.Room;
-import com.hotels.model.User;
 	
 @Configuration
 @EnableTransactionManagement
@@ -39,9 +37,9 @@ public class AppContext {
 		factoryBean.setDataSource(dataSource());
 		Properties properties = new Properties();
 		properties.put("hibernate.show_sql", "true");
-		properties.put("hibernate.hbm2ddl.auto", "update");
+		properties.put("hibernate.hbm2ddl.auto", "validate");
 		factoryBean.setHibernateProperties(properties);
-		factoryBean.setAnnotatedClasses(Country.class, Hotel.class, Room.class, User.class, Role.class);
+		factoryBean.setAnnotatedClasses(Country.class, Hotel.class, Room.class);
 		return factoryBean;
 	}
 	

@@ -6,13 +6,13 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		Class[] cls = {AppContext.class, SecurityConfig.class, SecurityInit.class};
+		Class[] cls = {AppContext.class };
 		return cls;
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		Class[] arrClass = { StartMvnAppConfig.class };
+		Class[] arrClass = { WebConfig.class };
 		return arrClass;
 	}
 

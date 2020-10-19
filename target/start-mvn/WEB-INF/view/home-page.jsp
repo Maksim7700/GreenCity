@@ -1,5 +1,4 @@
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -41,7 +40,9 @@
                     </tr>
                     </c:forEach>
 
-
-	
+	${message}
+	<form action="/logout" method="post">
+		<input value="Logout" type="submit">
+	</form>
 </body>
 </html>
